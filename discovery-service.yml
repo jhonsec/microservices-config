@@ -13,8 +13,8 @@ eureka:
 
 ---
 
-spring:
-  profiles: docker
+#spring:
+#  profiles: docker
 
 # EUREKA
 eureka:
@@ -23,11 +23,11 @@ eureka:
       defaultZone: http://discovery-service:8088/eureka/
 
 # EUREKA
-eureka:
-  instance:
-    hostname: localhost
-    port: 8088
-  client:
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+#eureka:
+#  instance:
+#    hostname: localhost
+#    port: 8088
+#  client:
+#    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
 
