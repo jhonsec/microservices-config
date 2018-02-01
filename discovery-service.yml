@@ -1,0 +1,23 @@
+# EMBEDDED SERVER CONFIGURATION
+server:
+    port: ${port:8088}
+    error.whitelabel.enabled: false
+
+# EUREKA
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+
+---
+
+spring:
+  profiles: docker
+
+# EUREKA
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-service:8081/eureka/
