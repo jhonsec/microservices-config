@@ -1,0 +1,48 @@
+# EMBEDDED SERVER CONFIGURATION
+server:
+  port: ${port:8081}
+  context-path: /
+  error.whitelabel.enabled: false
+  compression:
+    enabled: true
+    min-response-size: 1024
+    mime-types:
+      - text/html
+      - text/css
+      - text/plain
+      - text/xml
+      - application/json
+      - application/javascript
+# JACKSON
+spring:
+  jackson.serialization:
+      write_dates_as_timestamps: false
+
+# Disable spring basic authentication security
+security:
+  basic:
+    enabled: false
+  oauth2:
+    resource:
+      jwt:
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsV76PD0vtnkE6sEl7+ho
+          mFzxHjINI26UwqdBKFzg+LMhzF78egKqtNsRiz6QzmGNaLc7ONiOxxlLmvlgoBbM
+          yKTyceFqkkL/9mO4bKH5VR9nWPnYrzqkQy3CRb9NqIYeVJyIpuasT+gOOA0KQv3u
+          EnhZ9q1sYFWMOZVCXp6FsSzWzzbFZPNmkwQEXXl1gyS1uLAmmkYEGmyZD1Jc6d6Q
+          +WSkllyVPRyik0JBvIjsV2WD8hSubFlVxk/zZOY4g46zOD/EGHo6cIAvmsckOOHg
+          oCCurUDI9tiRBo0R5IapaWQ/VqpPh5TfdHDL0zmdBaS1/iI5xjE1dAtYhJZ+qJiW
+          1QIDAQAB
+          -----END PUBLIC KEY-----
+      id: openid
+      serviceId: ${PREFIX:}resource
+
+# EUREKA
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery-service:8088/eureka/
+
