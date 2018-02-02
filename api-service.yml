@@ -28,13 +28,7 @@ security:
       jwt:
         keyValue: |
           -----BEGIN PUBLIC KEY-----
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsV76PD0vtnkE6sEl7+ho
-          mFzxHjINI26UwqdBKFzg+LMhzF78egKqtNsRiz6QzmGNaLc7ONiOxxlLmvlgoBbM
-          yKTyceFqkkL/9mO4bKH5VR9nWPnYrzqkQy3CRb9NqIYeVJyIpuasT+gOOA0KQv3u
-          EnhZ9q1sYFWMOZVCXp6FsSzWzzbFZPNmkwQEXXl1gyS1uLAmmkYEGmyZD1Jc6d6Q
-          +WSkllyVPRyik0JBvIjsV2WD8hSubFlVxk/zZOY4g46zOD/EGHo6cIAvmsckOOHg
-          oCCurUDI9tiRBo0R5IapaWQ/VqpPh5TfdHDL0zmdBaS1/iI5xjE1dAtYhJZ+qJiW
-          1QIDAQAB
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsV76PD0vtnkE6sEl7+homFzxHjINI26UwqdBKFzg+LMhzF78egKqtNsRiz6QzmGNaLc7ONiOxxlLmvlgoBbMyKTyceFqkkL/9mO4bKH5VR9nWPnYrzqkQy3CRb9NqIYeVJyIpuasT+gOOA0KQv3uEnhZ9q1sYFWMOZVCXp6FsSzWzzbFZPNmkwQEXXl1gyS1uLAmmkYEGmyZD1Jc6d6Q+WSkllyVPRyik0JBvIjsV2WD8hSubFlVxk/zZOY4g46zOD/EGHo6cIAvmsckOOHgoCCurUDI9tiRBo0R5IapaWQ/VqpPh5TfdHDL0zmdBaS1/iI5xjE1dAtYhJZ+qJiW1QIDAQAB
           -----END PUBLIC KEY-----
       id: openid
       serviceId: ${PREFIX:}resource
