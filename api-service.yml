@@ -15,8 +15,9 @@ server:
       - application/javascript
 # JACKSON
 spring:
-  jackson.serialization:
-      write_dates_as_timestamps: false
+  jackson:
+    serialization:
+        write-dates-as-timestamps: false
 
 # Disable spring basic authentication security
 security:
