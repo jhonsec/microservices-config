@@ -1,0 +1,45 @@
+# EMBEDDED SERVER CONFIGURATION
+server:
+  port: ${port:8089}
+
+spring:
+  aop:
+    proxyTargetClass: true
+
+# EUREKA
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery-service:8088/eureka/
+
+# ZULL
+zuul:
+  routes:
+    auth-service:
+      sensitiveHeaders:
+      path: /oauth/**
+      stripPrefix: false
+    # api-service should be moved to path other than /
+    api-service:
+      sensitiveHeader:
+      path: /api/**
+      stripPrefix: true
+  add-proxy-headers: true
+
+# SECURITY
+security:
+  basic:
+    enabled: false
+  oauth2:
+    sso:
+      loginPath: /login
+    resource:
+      jwt:
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsV76PD0vtnkE6sEl7+homFzxHjINI26UwqdBKFzg+LMhzF78egKqtNsRiz6QzmGNaLc7ONiOxxlLmvlgoBbMyKTyceFqkkL/9mO4bKH5VR9nWPnYrzqkQy3CRb9NqIYeVJyIpuasT+gOOA0KQv3uEnhZ9q1sYFWMOZVCXp6FsSzWzzbFZPNmkwQEXXl1gyS1uLAmmkYEGmyZD1Jc6d6Q+WSkllyVPRyik0JBvIjsV2WD8hSubFlVxk/zZOY4g46zOD/EGHo6cIAvmsckOOHgoCCurUDI9tiRBo0R5IapaWQ/VqpPh5TfdHDL0zmdBaS1/iI5xjE1dAtYhJZ+qJiW1QIDAQAB
+          -----END PUBLIC KEY-----
+      id: openid
+      serviceId: ${PREFIX:}resource
