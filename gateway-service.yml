@@ -23,7 +23,7 @@ zuul:
       stripPrefix: false
     # api-service should be moved to path other than /
     api-service:
-      sensitiveHeader:
+      sensitiveHeaders:
       path: /api/**
       stripPrefix: true
   add-proxy-headers: true
