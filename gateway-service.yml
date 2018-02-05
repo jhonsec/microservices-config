@@ -16,6 +16,7 @@ eureka:
 
 # ZULL
 zuul:
+  sensitive-headers: Cookie,Set-Cookie
   routes:
     auth-service:
       sensitiveHeaders:
@@ -27,6 +28,14 @@ zuul:
       path: /api/**
       stripPrefix: true
   add-proxy-headers: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
 
 # SECURITY
 security:

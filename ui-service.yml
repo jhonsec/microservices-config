@@ -22,6 +22,7 @@ eureka:
 
 # ZULL
 zuul:
+  sensitive-headers: Cookie,Set-Cookie
   routes:
     gateway-service:
       url: http://gateway-service:8089
@@ -38,6 +39,14 @@ zuul:
       stripPrefix: false
       serviceId: gateway-service
   add-proxy-headers: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
 
 #SECURITY
 security:
