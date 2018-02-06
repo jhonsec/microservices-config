@@ -39,16 +39,6 @@ zuul:
       serviceId: gateway-service
   add-proxy-headers: true
 
-hystrix:
-  metrics:
-    enabled: true
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 3000
-
 #SECURITY
 security:
   basic:
