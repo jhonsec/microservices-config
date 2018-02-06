@@ -19,6 +19,13 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-service:8088/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+
+ribbon:
+  eureka:
+    enabled: true
 
 # ZULL
 zuul:

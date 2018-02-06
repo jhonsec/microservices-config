@@ -8,8 +8,11 @@ eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://discovery-service:8088/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: false
 
 ---
 
@@ -17,10 +20,10 @@ eureka:
 #  profiles: docker
 
 # EUREKA
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://discovery-service:8088/eureka/
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://discovery-service:8088/eureka/
 
 # EUREKA
 #eureka:
